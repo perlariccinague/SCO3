@@ -1,0 +1,32 @@
+
+<script src="<?= TL_ASSETS_URL ?>assets/jquery-ui/js/jquery-ui.min.js"></script>
+
+<script>
+  jQuery(function($) {
+    $(document).ready(function() {
+      $(document).accordion({
+        // Put custom options here
+        heightStyle: 'content',
+        header: 'div.toggler',
+        collapsible: true,
+        /* alle geschlossen Anpassung2 ef */
+        active: false,
+        /*Anpassung2 Ende*/
+        create: function(event, ui) {
+          ui.header.addClass('active');
+        },
+        activate: function(event, ui) {
+          ui.newHeader.addClass('active');
+          ui.oldHeader.removeClass('active');
+        }
+      });
+      /* Anpassung Anker Anfang */
+      $('div.toggler').each(function() {
+          if (document.location.hash === '#' + $(this).parent().attr('id') && !$(this).hasClass('active')) {
+              $(this).click();
+          }
+      });
+      /* Anpassung Anker Ende */
+    });
+  })(jQuery);
+</script>

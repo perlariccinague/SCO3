@@ -1,0 +1,14 @@
+
+    </div>
+  </div>
+	
+  <nav class="slider-control bild_slider_menu">
+  	<div class="">
+    <a href="#" class="slider-prev"><img class="white" src="files/assets/images/Icons/arrow-back_white.svg"></a>
+    <span class="slider-menu"></span>
+    <a href="#" class="slider-next"><img class="white" src="files/assets/images/Icons/arrow-forward_white.svg"></a>
+     </div>
+  </nav>
+ 
+</div>
+

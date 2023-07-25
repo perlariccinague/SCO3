@@ -1,0 +1,18 @@
+<?php if(strstr($this->class, "news-slider", true)):
+	foreach ($this->articles as $article) echo $article;
+else:
+
+
+$this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+
+  <?php if (empty($this->articles)): ?>
+    <p class="empty"><?= $this->empty ?></p>
+  <?php else: ?>
+    <?= implode('', $this->articles) ?>
+    <?= $this->pagination ?>
+  <?php endif; ?>
+
+<?php $this->endblock(); ?>
+<?php endif; ?>

@@ -1,0 +1,42 @@
+<?php $this->extend('block_searchable'); ?>
+
+<?php $this->block('content'); ?>
+
+  <?php if ($this->useImage): ?>
+    <figure class="image_container">
+
+      <?= $this->embed_pre ?>
+      <a href="<?= $this->href ?>"<?php if ($this->linkTitle): ?> title="<?= $this->linkTitle ?>"<?php endif; ?> class="hyperlink_img"<?= $this->attribute ?><?= $this->target ?>><?php $this->insert('picture_default', $this->picture); ?></a>
+      <?= $this->embed_post ?>
+
+      <?php if ($this->caption): ?>
+        <figcaption class="caption"><?= $this->caption ?></figcaption>
+      <?php endif; ?>
+
+    </figure>
+    
+    
+      <?php elseif ($this->useClass): ?>
+    <figure class="back_link">
+
+      <?= $this->embed_prepre ?>
+    <a href="<?= $this->href ?>#mannschaft" class="hyperlink_txt" title="<?= $this->linkTitle ?>"<?= $this->attribute ?><?= $this->target ?>><?= $this->link ?><img src="files/assets/images/Icons/arrow-back_white.svg" class="link_arrow_next"></a>
+    <?= $this->embed_post ?>
+      <?= $this->embed_post ?>
+
+      <?php if ($this->caption): ?>
+        <figcaption class="caption"><?= $this->caption ?></figcaption>
+      <?php endif; ?>
+
+    </figure>
+    
+    
+    
+  <?php else: ?>
+    <?= $this->embed_pre ?>
+    <a href="<?= $this->href ?>#mannschaft" class="hyperlink_txt" title="<?= $this->linkTitle ?>"<?= $this->attribute ?><?= $this->target ?>><?= $this->link ?><img src="files/assets/images/Icons/arrow-forward_white.svg" class="link_arrow_next"></a>
+    <?= $this->embed_post ?>
+  <?php endif; ?>
+
+<?php $this->endblock(); ?>
+
